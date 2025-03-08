@@ -1,5 +1,5 @@
 # coding: utf8
-# @File: zhihu.py
+# @File: dynamic_information.py
 # @Time: 2025/03/07
 # 虽然多线程获取，但还是比较慢
 
@@ -164,7 +164,9 @@ def analyze_answer(target_href, page_flag, page):
     comment_content = []
     
     if return_comments_num == 0:
-        return 0
+        print('==========回答无评论信息为0，结束获取该回答评论信息==========\n')
+        return_result = [page, return_answer_time, return_answer_ip, return_answer_content, return_comments_num, return_like_num, return_comment_info]
+        return return_result
     try:
         loc = (By.XPATH, '//*[@id="root"]/div/main/div/div/div[3]/div[1]/div/div[2]/div/div/div/div[2]/div[2]/div[1]/button[1]')
         page.ele(loc, timeout=1).click()
@@ -287,11 +289,11 @@ def analyze_question(target_href, page_flag, page):
     return_result = [page, return_question_content, return_question_answer_num, return_question_answer_info]
     return return_result
     
-def get_user_answer(target_href):
+def get_user_answer(target_href, page):
     # 创建一个浏览器对象
     page_flag = 0 # 用于优化page
-    option = ChromiumOptions().auto_port()
-    page = ChromiumPage(addr_or_opts=option)
+    # option = ChromiumOptions().auto_port()
+    # page = ChromiumPage(addr_or_opts=option)
     page.get(target_href)
     page.set.window.full()
     page = auto_login(page)
@@ -313,9 +315,8 @@ def get_user_answer(target_href):
     return_answer_question_href = []
 
     if int(return_answer_num) == 0:
-        page.quit()
         print('==========用户无回答信息为0，结束获取回答信息==========\n')
-        return 0
+        return page
 
     limit = min(int(return_answer_num), 10)
     loc = [f'//*[@id="Profile-answers"]/div[2]/div[{i}]/div/div/h2/div/a' for i in range(1, limit + 1)]
@@ -436,12 +437,13 @@ def get_user_question(target_href, page):
         print(analyze_question_return)
         page_flag = 1
         # 按照返回列表格式用键值对的json格式存储
-        write_question2json(analyze_question_return, 'question' + str(i))
+        write_question2json(analyze_question_return, 'question' + str(i + 1))
     print('==========获取提问信息结束==========\n')
     analyse_page.quit()
-    page.quit()
+    return page
 
 # answer_return_page = get_user_answer("https://www.zhihu.com/people/gianluca-sorrentino/")
 # # analyze_answer('https://www.zhihu.com/question/647766773/answer/68484783999',0,0)
 # get_user_question("https://www.zhihu.com/people/gianluca-sorrentino/", answer_return_page)
 # # analyze_question('https://www.zhihu.com/question/295109514', 0, 0)
+# analyze_answer('https://www.zhihu.com/question/14365568411/answer/119198135782',0 ,0)

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>最新提问记录</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .card-header {
+            cursor: pointer;
+        }
+        .card-header:hover {
+            background-color: #198754 !important;
+        }
+        .collapse-icon {
+            transition: transform 0.3s ease;
+        }
+        .collapsed .collapse-icon {
+            transform: rotate(-90deg);
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="display-4 text-center mb-4">最新提问记录</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                {% for question_id, question in questions.items() %}
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header bg-success text-white collapsed" 
+                         data-bs-toggle="collapse" 
+                         data-bs-target="#question{{ loop.index }}" 
+                         aria-expanded="false">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">{{ question.提问标题 }}</h5>
+                            <i class="bi bi-chevron-down collapse-icon"></i>
+                        </div>
+                    </div>
+                    <div class="collapse" id="question{{ loop.index }}">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <p class="text-muted mb-2">提问时间：{{ question.提问时间 }}</p>
+                                <p class="mb-2">{{ question.提问内容 }}</p>
+                                <div class="d-flex gap-3">
+                                    <span><i class="bi bi-chat-fill text-primary"></i> {{ question.回答数目 }}</span>
+                                    <span><i class="bi bi-star-fill text-warning"></i> {{ question.关注数目 }}</span>
+                                </div>
+                            </div>
+                            {% if question.回答信息 %}
+                            <div class="mt-4">
+                                <h6 class="mb-3">回答（{{ question.回答信息|length }}）</h6>
+                                {% for answer in question.回答信息 %}
+                                <div class="border-bottom py-2">
+                                    <p class="mb-1"><strong>{{ answer.回答人昵称 }}</strong> · {{ answer.回答时间 }}</p>
+                                    <p class="mb-1">{{ answer.回答内容 }}</p>
+                                    <small class="text-muted">赞 {{ answer.回答赞次数 }}</small>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="text-end text-muted small mb-3">
+                数据更新时间: {{ questions['question1'].update_time if questions and 'question1' in questions else 'N/A' }}
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('show_user') }}" class="btn btn-secondary">返回用户主页</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 初始化所有折叠组件
+        var collapseElements = document.querySelectorAll('.collapse');
+        collapseElements.forEach(function(element) {
+            new bootstrap.Collapse(element, {
+                toggle: false
+            });
+        });
+
+        // 添加图标旋转效果
+        document.querySelectorAll('.card-header').forEach(function(header) {
+            header.addEventListener('click', function() {
+                var icon = this.querySelector('.collapse-icon');
+                if (this.classList.contains('collapsed')) {
+                    icon.style.transform = 'rotate(-90deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,158 +1,156 @@
 [
     {
-        "href": "https://www.zhihu.com/people/lu-chen-xi-9-98",
-        "用户名": "小约翰​​",
-        "居住地": "现居上海",
+        "href": "https://www.zhihu.com/people/liaoxuefeng",
+        "用户名": "廖雪峰​",
+        "居住地": "现居北京",
         "所在行业": "互联网",
-        "职业经历": "国家认定专业十级段子手",
-        "MCN 机构": "上海知外文化传播有限公司",
-        "实名信息": "吕晨曦",
-        "关注了": "561",
-        "关注者": "946000",
+        "个人简介": "全栈工程师，业余马拉松选手，欢迎免费学习Java/Python/JavaScript/SQL/Git课程：https://www.liaoxuefeng.com公众号：廖雪峰，知识星球：廖雪峰的星球",
+        "关注了": "142",
+        "关注者": "196000",
         "follower": {
             "follower1": {
-                "follower_href": "https://www.zhihu.com/people/zhang-zhu-12",
-                "follower_username": "Zpuzzle",
-                "answer_num": 6016,
-                "article_num": 16,
-                "follower_num": 431744
+                "follower_href": "https://www.zhihu.com/people/gianluca-sorrentino",
+                "follower_username": "意大利卢卡",
+                "answer_num": 98,
+                "article_num": 35,
+                "follower_num": 198848
             },
             "follower2": {
-                "follower_href": "https://www.zhihu.com/people/dan-xia-jia-ming-yue",
-                "follower_username": "越石赋扶风",
-                "answer_num": 187,
-                "article_num": 23,
-                "follower_num": 27318
+                "follower_href": "https://www.zhihu.com/people/Yefeng7",
+                "follower_username": "叶泊枫",
+                "answer_num": 489,
+                "article_num": 43,
+                "follower_num": 662072
             },
             "follower3": {
-                "follower_href": "https://www.zhihu.com/people/xiao-ce-zi-zc",
-                "follower_username": "小册子zc",
-                "answer_num": 183,
-                "article_num": 37,
-                "follower_num": 7548
+                "follower_href": "https://www.zhihu.com/people/leng-zhe",
+                "follower_username": "冷哲",
+                "answer_num": 1163,
+                "article_num": 76,
+                "follower_num": 495766
             },
             "follower4": {
-                "follower_href": "https://www.zhihu.com/people/snowtree-95",
-                "follower_username": "snowtree",
-                "answer_num": 81,
-                "article_num": 9,
-                "follower_num": 16124
+                "follower_href": "https://www.zhihu.com/people/zhang-shuai-guo-56",
+                "follower_username": "甩锅大魔王",
+                "answer_num": 6192,
+                "article_num": 94,
+                "follower_num": 78441
             },
             "follower5": {
-                "follower_href": "https://www.zhihu.com/people/wenwu-8",
-                "follower_username": "wenwU",
-                "answer_num": 1196,
-                "article_num": 329,
-                "follower_num": 13745
+                "follower_href": "https://www.zhihu.com/people/yi-zhi-zhu-ding-lou",
+                "follower_username": "一直住顶楼",
+                "answer_num": 7252,
+                "article_num": 29,
+                "follower_num": 171433
             },
             "follower6": {
-                "follower_href": "https://www.zhihu.com/people/jerry-14-83-85",
-                "follower_username": "紫色天光",
-                "answer_num": 125,
-                "article_num": 9,
-                "follower_num": 1519
+                "follower_href": "https://www.zhihu.com/people/alexention-88",
+                "follower_username": "深空",
+                "answer_num": 4304,
+                "article_num": 7,
+                "follower_num": 24550
             },
             "follower7": {
-                "follower_href": "https://www.zhihu.com/people/lan-xian-sheng-3-41",
-                "follower_username": "林先生",
-                "answer_num": 514,
-                "article_num": 4,
-                "follower_num": 374288
+                "follower_href": "https://www.zhihu.com/people/xu-zhu-6-44",
+                "follower_username": "白色烙铁",
+                "answer_num": 1946,
+                "article_num": 0,
+                "follower_num": 1155
             },
             "follower8": {
-                "follower_href": "https://www.zhihu.com/people/lian-shang-hua-hua-de-tong-li",
-                "follower_username": "李蠕蠕",
-                "answer_num": 56,
-                "article_num": 0,
-                "follower_num": 17749
+                "follower_href": "https://www.zhihu.com/people/chen-lei-93-78",
+                "follower_username": "陈磊",
+                "answer_num": 1832,
+                "article_num": 12,
+                "follower_num": 67712
             },
             "follower9": {
-                "follower_href": "https://www.zhihu.com/people/xu-ru-lin-41-4",
-                "follower_username": "徐如林",
-                "answer_num": 1008,
+                "follower_href": "https://www.zhihu.com/people/ling-san-bao-52",
+                "follower_username": "做大明的狗荣幸啊",
+                "answer_num": 261,
                 "article_num": 0,
-                "follower_num": 13185
+                "follower_num": 701
             },
             "follower10": {
-                "follower_href": "https://www.zhihu.com/org/zhong-guo-neng-jian",
-                "follower_username": "中国能建",
-                "answer_num": 531,
-                "article_num": 262,
-                "follower_num": 152089
+                "follower_href": "https://www.zhihu.com/people/yuan-chen-42-24",
+                "follower_username": "缘辰",
+                "answer_num": 1831,
+                "article_num": 0,
+                "follower_num": 22386
             }
         },
         "fans": {
             "fans1": {
-                "fans_href": "https://www.zhihu.com/people/zzzz-43-44-92",
-                "fans_username": "zzzz",
-                "answer_num": 0,
-                "article_num": 0,
-                "follower_num": 0
+                "fans_href": "https://www.zhihu.com/people/wusi0335",
+                "fans_username": "放下",
+                "answer_num": 798,
+                "article_num": 21,
+                "follower_num": 388
             },
             "fans2": {
-                "fans_href": "https://www.zhihu.com/people/18530-55",
-                "fans_username": "知乎用户18530",
-                "answer_num": 0,
-                "article_num": 0,
-                "follower_num": 0
+                "fans_href": "https://www.zhihu.com/people/26-17-65-86",
+                "fans_username": "宝鸡老黑与翠花",
+                "answer_num": 88,
+                "article_num": 7,
+                "follower_num": 1
             },
             "fans3": {
-                "fans_href": "https://www.zhihu.com/people/zhe-yan-85-39",
-                "fans_username": "折言",
-                "answer_num": 5,
-                "article_num": 0,
-                "follower_num": 0
-            },
-            "fans4": {
-                "fans_href": "https://www.zhihu.com/people/61-45-28-95-49",
-                "fans_username": "心计",
+                "fans_href": "https://www.zhihu.com/people/qiao-liang-fang",
+                "fans_username": "gggggg",
                 "answer_num": 11,
                 "article_num": 0,
                 "follower_num": 0
             },
+            "fans4": {
+                "fans_href": "https://www.zhihu.com/people/39-40-94-37-83",
+                "fans_username": "欧之萌海外仓",
+                "answer_num": 24,
+                "article_num": 9,
+                "follower_num": 2
+            },
             "fans5": {
-                "fans_href": "https://www.zhihu.com/people/zhou-wu-78-65",
-                "fans_username": "周五",
-                "answer_num": 7,
-                "article_num": 0,
-                "follower_num": 1
+                "fans_href": "https://www.zhihu.com/people/he-wang-zhong-86",
+                "fans_username": "零号打工人",
+                "answer_num": 38,
+                "article_num": 1,
+                "follower_num": 11
             },
             "fans6": {
-                "fans_href": "https://www.zhihu.com/people/zhao-rui-peng-73",
-                "fans_username": "赵瑞鹏",
-                "answer_num": 1,
+                "fans_href": "https://www.zhihu.com/people/happy-78-6-51",
+                "fans_username": "happy",
+                "answer_num": 0,
                 "article_num": 0,
-                "follower_num": 1
+                "follower_num": 3
             },
             "fans7": {
-                "fans_href": "https://www.zhihu.com/people/cqus9s",
-                "fans_username": "知乎用户Cqus9S",
-                "answer_num": 0,
-                "article_num": 0,
-                "follower_num": 0
+                "fans_href": "https://www.zhihu.com/people/ping-fan-de-shi-jie-66-24",
+                "fans_username": "平凡的世界",
+                "answer_num": 22,
+                "article_num": 1,
+                "follower_num": 159
             },
             "fans8": {
-                "fans_href": "https://www.zhihu.com/people/10-83-38-37-78",
-                "fans_username": "知乎用户",
-                "answer_num": 0,
-                "article_num": 0,
-                "follower_num": 0
+                "fans_href": "https://www.zhihu.com/people/98-98-69-71-34",
+                "fans_username": "单词速记策略师",
+                "answer_num": 326,
+                "article_num": 11,
+                "follower_num": 1903
             },
             "fans9": {
-                "fans_href": "https://www.zhihu.com/people/wo-de-32-92-40",
-                "fans_username": "我的",
+                "fans_href": "https://www.zhihu.com/people/26-11-95-76",
+                "fans_username": "曾明蓉",
                 "answer_num": 0,
                 "article_num": 0,
-                "follower_num": 0
+                "follower_num": 6
             },
             "fans10": {
-                "fans_href": "https://www.zhihu.com/people/67-92-71-76-94",
-                "fans_username": "不知道",
+                "fans_href": "https://www.zhihu.com/people/gfhhfjj",
+                "fans_username": "Gfhhfjj",
                 "answer_num": 0,
                 "article_num": 0,
                 "follower_num": 0
             }
         },
-        "update_time": "2025-03-08 11:23:56"
+        "update_time": "2025-03-08 19:47:40"
     }
 ]

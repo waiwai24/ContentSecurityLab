@@ -1,5 +1,5 @@
 # coding: utf8
-# @File: zhihu.py
+# @File: relationship.py
 # @Time: 2025/03/06
 # 别问我为什么要先写入临时文件再写入json，忘了当时的报错了，但是这样写就没问题
 
@@ -78,7 +78,7 @@ def send_tempfile2json(key, current_time):
         print('=========={key}写入./db/user_details.json失败=========='.format(key=key))
 
 # 信息获取
-def get_information(target_href, key, xpath_index):
+def get_information(target_href, page, pageflag, key, xpath_index):
     with open('./db/tempsave.txt', 'w', encoding='utf-8') as f:
         f.write('')  # 清空文件
 
@@ -89,10 +89,11 @@ def get_information(target_href, key, xpath_index):
         for item in data:
             if item["href"] == target_href:
                 num = item[num_key]
-
-    page = ChromiumPage()
-    page.set.window.full()
+    if pageflag == 0:
+        page = ChromiumPage()
     page.get(target_href)
+    page.set.window.full()
+
     if key == 'follower':
         print('==========获取followers信息============')
     elif key == 'fans':
@@ -103,8 +104,7 @@ def get_information(target_href, key, xpath_index):
     page.ele(loc).click()
 
     if int(num) == 0:
-        page.quit()
-        return 0
+        return page
 
     limit = min(int(num), 10)
     for i in range(1, limit + 1):
@@ -146,15 +146,14 @@ def get_information(target_href, key, xpath_index):
     print(current_time)
     
     send_tempfile2json(key, current_time)
-    page.quit()
-    return 0
+    return page
 
 # 获取关注者信息
-def get_followers_information(target_href):
-    return get_information(target_href, 'follower', 1)
+def get_followers_information(target_href ,page, pageflag):
+    return get_information(target_href, page, pageflag,'follower', 1)
 
 # 获取粉丝信息
-def get_fans_information(target_href):
-    return get_information(target_href, 'fans', 2)
+def get_fans_information(target_href, page, pageflag):
+    return get_information(target_href, page, pageflag, 'fans', 2)
 
 
