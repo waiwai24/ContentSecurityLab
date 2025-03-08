@@ -15,7 +15,7 @@
                 "follower_username": "Zpuzzle",
                 "answer_num": 6016,
                 "article_num": 16,
-                "follower_num": 431745
+                "follower_num": 431744
             },
             "follower2": {
                 "follower_href": "https://www.zhihu.com/people/dan-xia-jia-ming-yue",
@@ -57,7 +57,7 @@
                 "follower_username": "林先生",
                 "answer_num": 514,
                 "article_num": 4,
-                "follower_num": 374287
+                "follower_num": 374288
             },
             "follower8": {
                 "follower_href": "https://www.zhihu.com/people/lian-shang-hua-hua-de-tong-li",
@@ -153,6 +153,6 @@
                 "follower_num": 0
             }
         },
-        "update_time": "2025-03-08 11:06:23"
+        "update_time": "2025-03-08 11:23:56"
     }
 ]
