@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>鼠标监控</title>
+    <style>
+        #warning {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #ff4444;
+            color: white;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        #status {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            border-radius: 5px;
+        }
+        
+        .suspicious {
+            background-color: #ff4444 !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="trackArea" style="height: 100vh;">
+        在此区域移动鼠标
+    </div>
+
+    <div id="warning">
+        检测到可能的自动化行为！请移动鼠标或进行其他操作。
+    </div>
+
+    <div id="status">
+        移动状态: <span id="moveStatus">正常</span><br>
+        移动次数: <span id="moveCount">0</span>
+    </div>
+
+    <script>
+        let lastSend = 0;
+        let lastActivity = Date.now();
+        const throttleDelay = 100; // 节流时间(ms)
+        const inactivityTimeout = 5000; // 5秒无操作则显示警告
+
+        // 监测用户活动
+        function resetActivityTimer() {
+            lastActivity = Date.now();
+            document.getElementById('warning').style.display = 'none';
+        }
+
+        // 检查用户活动
+        function checkActivity() {
+            if (Date.now() - lastActivity > inactivityTimeout) {
+                document.getElementById('warning').style.display = 'block';
+            }
+        }
+
+        // 设置定期检查
+        setInterval(checkActivity, 1000);
+
+        // 监听各种用户事件
+        const events = ['mousemove', 'mousedown', 'click', 'scroll', 'keypress'];
+        events.forEach(event => {
+            document.addEventListener(event, resetActivityTimer);
+        });
+
+        let moveCount = 0;
+        let patterns = {
+            straightLine: 0,
+            uniformSpeed: 0
+        };
+
+        document.getElementById('trackArea').addEventListener('mousemove', (e) => {
+            const now = Date.now();
+            if (now - lastSend >= throttleDelay) {
+                moveCount++;
+                document.getElementById('moveCount').textContent = moveCount;
+                
+                const data = {
+                    x: e.clientX,
+                    y: e.clientY,
+                    t: now,
+                    path: window.location.pathname
+                };
+
+                // 发送数据到服务端
+                fetch('/mousemove', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'warning') {
+                        document.getElementById('moveStatus').textContent = '可疑';
+                        document.getElementById('status').classList.add('suspicious');
+                    }
+                });
+
+                lastSend = now;
+            }
+        });
+    </script>
+</body>
+</html>
